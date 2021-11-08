@@ -66,22 +66,53 @@ class CustomTextFormFieldWdg extends StatelessWidget {
 }
 
 class CustomTextWidget extends StatelessWidget {
-  const CustomTextWidget({Key? key, required this.text}) : super(key: key);
+  const CustomTextWidget({Key? key, required this.text, required this.textSize}) : super(key: key);
   final String text;
-
+  final double textSize;
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         color: kColorTextMain,
         fontWeight: FontWeight.bold,
         letterSpacing: 1.5,
-        fontSize: 26,
+        fontSize: textSize,
 
       ),
     );
   }
 }
+
+class CustomTextForm extends StatelessWidget {
+  final TextInputType? inputType;
+  final Widget? suffexIcon;
+  final ValueSetter? onSaved;
+  final ValueSetter? onChanged;
+  final int? maxLines;
+
+  const CustomTextForm({Key? key, this.inputType, this.suffexIcon, this.onSaved, this.onChanged, this.maxLines}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      keyboardType: inputType,
+      onChanged: onChanged,
+      onSaved: onSaved,
+      maxLines: maxLines,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.transparent,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(
+            color: kColorTextFormBorder,
+          )
+        )
+      ),
+    );
+  }
+}
+
 
 

@@ -68,7 +68,6 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
               }
             },
             text: pageController!.hasClients ? (pageController?.page == 2 ? "Get Started" : "Next") : "Next" ,
-              // text: pageController!.hasClients ? (pageController?.page == 2 ? "false" : "true") : true ,
             )),
 
       ],

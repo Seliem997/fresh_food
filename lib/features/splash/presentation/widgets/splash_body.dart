@@ -13,6 +13,7 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody> {
 
+  @override
   void initState(){
     super.initState();
     goToNextView();
@@ -27,7 +28,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           Positioned(
             bottom: 15.h,
             left: 25.w,
-            child: Text(
+            child: const Text(
               'Fruits Market',
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -44,9 +45,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void goToNextView() {
-    Future.delayed(Duration(seconds: 3),()
+    Future.delayed(const Duration(seconds: 3),()
     {
-      Get.to(() => OnBoardingView(), transition: Transition.fade);
+      Get.to(() => const OnBoardingView(), transition: Transition.fade);
     } );
   }
 }
